@@ -29,7 +29,7 @@ import CoreData
 public extension NSObject {
     
     // dictionary
-    @objc public func toDictionary() -> [String: AnyObject] {
+    @objc public func toCustomDictionary() -> [String: AnyObject] {
         
         let propertiesDictionary : NSMutableDictionary = NSMutableDictionary()
         
@@ -52,7 +52,7 @@ public extension NSObject {
 public extension Decodable {
     
     /// convert model to dictionary
-    func toDictionary() -> [String: Any] {
+    func toCustomDictionary() -> [String: Any] {
         
         // create dict
         var data = [String: Any]()

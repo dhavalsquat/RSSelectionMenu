@@ -75,7 +75,7 @@ open class RSSelectionTableView<T>: UITableView {
         delegate = self.selectionDelegate
         tableFooterView = UIView()
         estimatedRowHeight = 50
-        rowHeight = UITableView.automaticDimension
+        rowHeight = UITableViewAutomaticDimension
         keyboardDismissMode = .interactive
         
         // register cells

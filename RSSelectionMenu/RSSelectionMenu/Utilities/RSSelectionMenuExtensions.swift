@@ -132,7 +132,7 @@ extension RSSelectionMenu {
             }
             
             let key = (T.self is UniqueProperty.Type) ? (object as! UniqueProperty).uniquePropertyName() : uniquePropertyName!
-            let dictionary: [String: Any] = (object is Decodable) ? (object as! Decodable).toDictionary() : (object as! NSObject).toDictionary()
+            let dictionary: [String: Any] = (object is Decodable) ? (object as! Decodable).toCustomDictionary() : (object as! NSObject).toCustomDictionary()
 
             return hasSameValue(forKey: key, object: dictionary, inArray: from)
         }
@@ -143,7 +143,7 @@ extension RSSelectionMenu {
         let value = String(describing: object[key])
         
         return inArray.index(where: { (data) -> Bool in
-            let dictionary = (data is Decodable) ? (data as! Decodable).toDictionary() : (data as! NSObject).toDictionary()
+            let dictionary = (data is Decodable) ? (data as! Decodable).toCustomDictionary() : (data as! NSObject).toCustomDictionary()
             return value == String(describing: dictionary[key])
         })
     }
